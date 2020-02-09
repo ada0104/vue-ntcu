@@ -1,0 +1,101 @@
+body {
+    width: 100%;
+    background: url(../../indeximage/content-topbg.png) repeat-x top #fff;
+}
+
+.left {
+    border: 3px solid #bddcb8;
+    margin: 2%;
+    width: 18%;
+    float: left;
+}
+
+.right {
+    width: 76%;
+    text-align: center;
+    float: left;
+}
+
+footer {
+    clear: left;
+}
+
+.left select {
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.3rem;
+    height: 50px;
+    -webkit-appearance: menulist;
+}
+
+li {
+    text-align: center;
+}
+
+.left button {
+    width: 90%;
+    color: green;
+    border: 5px solid rgb(221, 225, 228);
+    border-radius: 15px 15px 15px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    margin: 1% auto;
+}
+
+.left button:hover {
+    background: #bddcb8;
+}
+
+
+/* button:focus {
+    background: #bddcb8;
+} */
+
+.left button:focus {
+    background: #bddcb8;
+}
+
+.name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1% auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+span {
+    margin-top: 2%;
+}
+
+table {
+    margin: auto;
+    background: -webkit-linear-gradient(90deg, #cff2cb 0%, #9ee0d1 100%);
+    width: 80%;
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 1.5rem;
+    color: white;
+}
+
+tbody {
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 80px;
+    background: #fff;
+    box-shadow: 0px 0px 5px #30313345;
+}
+
+td {
+    font-size: 1.2rem;
+    padding: 3px;
+    background: white;
+    border-bottom: #DDDDDD solid 1px;
+}

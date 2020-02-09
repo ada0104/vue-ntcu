@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/aial_index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.css" />
+    <link rel="stylesheet" href="css/index_css/plan.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="left">
+        <select name="請選擇課程題目" id="kind">
+            <option value="cheese"selected disabled>請選擇主題</option>
+            <option value="cps" >合作問題解決線上系統</option>
+            <option value="gc">全球素養線上系統</option>
+        </select>
+        <ul class="list">
+
+        </ul>
+
+    </div>
+    <div class="right">
+
+        <div class="name">
+            <h2>教材與學校課程單元對應</h2>
+            <span><img src="indeximage/recommendBTN.png" alt="">&nbsp課程包下載&nbsp&nbsp&nbsp<a id="a1" href="#" target="_blank" title="學生手冊">學生手冊</a>&nbsp
+                <a id="a2" href="#" target="_blank" title="教師手冊">教師手冊</a></span>
+        </div>
+        <div class="detail">
+            <table>
+                <thead>
+                    <th>科目</th>
+                    <th>年級</th>
+                    <th>版本</th>
+                    <th>單元</th>
+                </thead>
+                <tbody class="detailList">
+                    <tr>
+                        <td>請先選擇課程主題</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <button class="btn07" onclick="history.back()">返回上頁</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        var data = [{
+            kind: 'cps',
+            title: '社區美食萬花筒',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1li6HZuNq3f2XGdmIxNS9ByFCMjnC-gnl/view',
+            teacher: 'https://drive.google.com/file/d/1H4fs6S1r585bhSxDOeycRhPtuqAMZSlC/view'
+        }, {
+            kind: 'cps',
+            title: '獵焰高手-製作二氧化碳瓶',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1K6Ll6VQhgZLWxDFl-vYugytAIJ7BXejW/view',
+            teacher: 'https://drive.google.com/file/d/13gpiKgArxrvnvr-A-eaqZLERweuRHqwZ/view'
+        }, {
+            kind: 'cps',
+            title: '穿越時空，扭轉未來',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/182G9V5qjTMPD3_Jauz682YhLVmrbESgx/view',
+            teacher: 'https://drive.google.com/file/d/1C7gimZcElXRIzPyCBE0UMwkJb0syBbZI/view'
+        }, {
+            kind: 'cps',
+            title: '溝通不NG',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1FxBKY7TQmFUlZMRdsg1ADVhI843-uaPA/view',
+            teacher: 'https://drive.google.com/file/d/1mONfLcIDBrqBYG8uc4R4VPdIiivKJl-g/view'
+        }, {
+            kind: 'cps',
+            title: '說話的藝術',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1WI0mTRqhPGf9eUb1TINxJ9dKw0O0XClz/view',
+            teacher: 'https://drive.google.com/file/d/17pXJyl8_mFVZEfbiiAHUrCA6rwRWHLC0/view'
+        }, {
+            kind: 'cps',
+            title: '魚菜一家親',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/12vgaZD5qJbFo7kVSuYZ1LkNvOqHHgSj_/view',
+            teacher: 'https://drive.google.com/file/d/1i6Tvn61T9hVpqWJpRY5XBiRBsWPpstB0/view'
+        }, {
+            kind: 'cps',
+            title: '搶救魯賓遜~創意悶燒鍋',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1VSIuSpHIgq5rwteoiz2ihC_qmjdprnV1/view',
+            teacher: 'https://drive.google.com/file/d/1T6XeJJeXn0YAKGuTlj8cwtSZaiFYq7aw/view'
+        }, {
+            kind: 'cps',
+            title: '耶誕感恩情，金莎表心意',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1YmuU8d1DIEbajEHgKp0tBcQKUVsNgpLx/view',
+            teacher: 'https://drive.google.com/file/d/1fDnJmkeItHXnQB8UDehcrPiBdkGjx8MU/view'
+        }, {
+            kind: 'cps',
+            title: '魚菜共生悠遊雲端',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/12VMg4r5N75Vc-5gSES2F1qLp4CZmdQq_/view',
+            teacher: 'https://drive.google.com/file/d/1PFWYOdIOgJw_LqLdjrORwSnAlc9MyacW/view'
+        }, {
+            kind: 'cps',
+            title: '縱橫四海',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/1fhDXDRYDEYYsEzzGoihAdzbohRuKTJ3C/view',
+            teacher: 'https://drive.google.com/file/d/1f3LewfPAHilNPS2IIOLIEXZaKFnHHyZp/view'
+        }, {
+            kind: 'cps',
+            title: '校園健檢大作戰',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/17_d6emQ5jyWadWoQ6Deu-mdH0DmMQZvK/view',
+            teacher: 'https://drive.google.com/file/d/1DDzmtANVxFRFBGAXU-cZr7fwFeI1MSQH/view'
+        }, {
+            kind: 'cps',
+            title: 'Robot Story',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/17ixVYLu7daE3U1jtebMzyt6-OjJWzLec/view',
+            teacher: 'https://drive.google.com/file/d/1_kGM3pv31UTuS3KBBhbw_0GF6Rxzf7sY/view'
+        }, {
+            kind: 'gc',
+            title: '沒有「12夜」之後',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1ruuk1MhIeTwHyhylYzXU0CXm6IOKoab9/view',
+            teacher: 'https://drive.google.com/file/d/1iEr0SLPaYZdvr5xYu0pp9CguNeup4MRP/view'
+        }, {
+            kind: 'gc',
+            title: '認識濕地與環境正義',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/14uqGHFbQo6RqVlEKmGHy3cW-5JxKTVl4/view',
+            teacher: 'https://drive.google.com/file/d/13XlA-xQz6NTEjUIzmNUK_FkGlrYqL9hr/view'
+        }, {
+            kind: 'gc',
+            title: '第二人生 Second Life',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1pKnRh7gl9WkeiukI8FRiQpdwUsUp0Qc9/view',
+            teacher: 'https://drive.google.com/file/d/1Pfejzh-Y480nozpBgbX1ckNNv2RgRcW6/view'
+        }, {
+            kind: 'gc',
+            title: '天下無不散的筵席',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1xaJj8xFo7DbeCjD6qzY0L8AHkCSRnLQu/view',
+            teacher: 'https://drive.google.com/file/d/1cZE09NGNidmByOv2v15uR_cBYgBECOgw/view'
+        }, {
+            kind: 'gc',
+            title: '逃難者',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1vpU3VoWGMgJdP12NolokQrx-v4cBX6Wp/view',
+            teacher: 'https://drive.google.com/file/d/1JT6CAeYKXj0K9gQI2D88ciWcAF9Vo0xb/view'
+        }, {
+            kind: 'gc',
+            title: '山野的呼喚',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1mfFrwkYGteKXuIoTdARrAYPdKQpLkb1w/view',
+            teacher: 'https://drive.google.com/file/d/1e7MCvfauwrd8emAB4DtsCy-IhGMleGy9/view'
+        }, {
+            kind: 'gc',
+            title: '綠屋頂',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/16-D7kwdGXkN1oULFxfOXcMvdLhs2W1uz/view',
+            teacher: 'https://drive.google.com/file/d/1KeZpZbwvFBJTQjcMioGNiMRUxlQJmtT-/view'
+        }, {
+            kind: 'gc',
+            title: '投投是道，投其所好',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1a6sxdDVtnE9CTT4uuoH_k-JyNSgOkFto/view',
+            teacher: 'https://drive.google.com/file/d/1lmzEsEdI3KyMv5ogjn2sP9MtxIB9Uusd/view'
+        }, {
+            kind: 'gc',
+            title: 'AI時代進擊人生',
+            grade: '國小',
+            student: 'https://drive.google.com/file/d/1rglUhVCo8YvSCcKPpHzOjWRdaWpUtpaz/view',
+            teacher: 'https://drive.google.com/file/d/1A7x_yr6D9ZRVb_Psv5nnl8kaExk4v_T6/view'
+        }, {
+            kind: 'gc',
+            title: '臺灣綠金',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/1fhDXDRYDEYYsEzzGoihAdzbohRuKTJ3C/view',
+            teacher: 'https://drive.google.com/file/d/1f3LewfPAHilNPS2IIOLIEXZaKFnHHyZp/view'
+        }, {
+            kind: 'gc',
+            title: '打敗假新聞，新聞警察來囉',
+            grade: '國高中',
+            student: '',
+            teacher: ''
+        }, {
+            kind: 'gc',
+            title: '塑速退散',
+            grade: '國高中',
+            student: 'https://drive.google.com/file/d/1e2wtYPKgwxVK-6Hnd2QTVpnQPIPSJmWR/view',
+            teacher: 'https://drive.google.com/file/d/1mCc_jDW3-oq1w2wZrGSvCaRbqhJHj_LL/view'
+        }];
+
+        for (i = 0; i < data.length; i++) {
+            var dataList = data[i].title;
+            var dataStr = `<li><button class="btnleft" id="${i}">${dataList}</button></li>`;
+            $('.list').append(dataStr);
+        }
+
+        //選取cps or gc 系統
+        $('#kind').change(function() {
+            var selKind = $('#kind').val();
+            $(".list").empty();
+            if (selKind == "cps") {
+
+                var cpsData = data.filter(function(item, index, array) {
+                    return item.kind == 'cps';
+                });
+                for (i = 0; i < cpsData.length; i++) {
+                    var cpsList = cpsData[i].title;
+                    var str = `<li><button class="btnleft" id="${i}">${cpsList}</button></li>`;
+                    $('.list').append(str);
+                }
+            } else {
+                var gcData = data.filter(function(item, index, array) {
+                    return item.kind == 'gc';
+                });
+                for (i = 0; i < gcData.length; i++) {
+                    var gcList = gcData[i].title;
+                    var str = `<li><button class="btnleft" id="${i}">${gcList}</button></li>`;
+                    $('.list').append(str);
+                }
+            }
+
+        });
+        $.ajax({
+            type: "GET",
+            url: "detail.json",
+            dataType: "json",
+            success: function(detailData) {
+
+                //課程詳細對應單元
+                document.querySelector('.list').addEventListener('click', checkName, false);
+           
+                function checkName(e) {
+                    
+                    $(".detailList").empty();
+                    var subName = e.target.textContent;
+                    var selDetail = detailData.filter(function(item, index, array) {
+                        return item.title == subName;
+                    });
+                    for (i = 0; i < selDetail.length; i++) {
+                        var sublList = selDetail[i].subject;
+                        var gradeList = selDetail[i].grade;
+                        var verList = selDetail[i].version;
+                        var unitList = selDetail[i].unit;
+                        var detailList = `<tr><td>${sublList}</td><td>${gradeList}</td><td>${verList}</td><td>${unitList}</td></tr>`;
+                        $('.detailList').append(detailList);
+
+                    }
+                    //課程連結
+                    var dataHref = data.filter(function(item, index, array) {
+                        return item.title == subName;
+                    });
+                    $('#a1').attr('href', `${dataHref[0].student}`);
+                    $('#a2').attr('href', `${dataHref[0].teacher}`);
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
